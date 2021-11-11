@@ -53,7 +53,10 @@ var carousel = new Vue({
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.'
             }
         ],
-        
+    },
+    created: function () {
+        // `this` points to the vm instance
+        this.autoSlide();
     },
     methods: {
         prevSlide(){
