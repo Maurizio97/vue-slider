@@ -22,7 +22,6 @@ const text = [
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ] */
-
 var carousel = new Vue({
     el: "#carousel",
     data: {
@@ -53,7 +52,8 @@ var carousel = new Vue({
                 title: 'Paradise',
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.'
             }
-        ]
+        ],
+        
     },
     methods: {
         prevSlide(){
@@ -70,10 +70,26 @@ var carousel = new Vue({
                 this.counter ++;
             }
         },
+        autoSlide(){
+            setInterval(() => {
+                console.log("ciao");
+                if (this.counter === this.slides.length - 1) {
+                   return this.counter = 0;
+                }else {
+                    return this.counter ++;
+                }         
+            }, 1000);
+        },
     },
-    autoSlide(){
-        setInterval(() => {
-            
-        }, interval);
-    }
 });
+/* autoSlide();
+function autoSlide() {
+    setInterval(() => {
+        console.log("ciao");
+        if (counter === carousel.data.slides.length - 1) {
+           counter = 0;
+        }else {
+            counter ++;
+        }         
+    }, 1000);
+} */
